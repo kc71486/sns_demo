@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facebook Login Demo</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script src="id.js"></script>
+    <script>
+
+      // This is called with the results from from FB.getLoginStatus().
+      function statusChangeCallback(response) {
+        console.log('statusChangeCallback')
+        console.log(response)
+
+        // Step 4 code goes here
+      }
+
+      // Step 3 code goes here
+
+      // Step 2 code goes here
+
+      // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ')
+        FB.api('/me', function(response) {
+          console.log(`Successful login for: ${response.name}`)
+          document.getElementById('status').innerHTML = `Thanks for logging in, ${response.name}!`
+        })
+      }
+    </script>
+
+
+    <!-- Step 1 code goes here -->
+
+    <div id="status"></div>
+
+  </body>
+</html>
